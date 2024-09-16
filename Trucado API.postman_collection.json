@@ -1,0 +1,1192 @@
+{
+	"info": {
+		"_postman_id": "3777b0de-4fc3-4bb2-83d7-8d616300d4fd",
+		"name": "Trucado API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27994492"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "/api/jogadores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/api/jogadores",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"jogadores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/jogadores",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"jogador\": \"Jogador 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/api/jogadores",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"jogadores"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/jogador/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jogador\": \"Jogador 3 p 4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3001/api/jogadores/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"jogadores",
+										"3"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/jogador/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3001/api/jogadores/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"jogadores",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "v2",
+					"item": [
+						{
+							"name": "usuarios",
+							"item": [
+								{
+									"name": "/usuarios",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios/7",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"7"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Freddy Kruger\",\r\n    \"email\": \"pesadelos@qa.com\",\r\n    \"senha\": \"sextou123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/usuarios",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/usuarios/8",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"8"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios/6",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"6"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "campeonato",
+							"item": [
+								{
+									"name": "/campeonatos",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"formato\": \"Trios\",\r\n    \"descricao\": \"Trio Rio Grande do Sul\",\r\n    \"rank_necessario\": 3,\r\n    \"premiacao\": 500,\r\n    \"inscricao\": 50\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/campeonatos",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v3",
+					"item": [
+						{
+							"name": "usuarios",
+							"item": [
+								{
+									"name": "/usuarios",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"TEste teste\",\r\n    \"email\": \"pesadelos@qa.com\",\r\n    \"senha\": \"sextou123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/usuarios",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/usuarios/8",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"8"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/usuarios/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/usuarios/9",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"usuarios",
+												"9"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "campeonato",
+							"item": [
+								{
+									"name": "/campeonatos",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"1º Copa UPF de Truco\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/campeonatos",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/campeonatos/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/campeonatos/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"campeonatos",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "partida",
+							"item": [
+								{
+									"name": "/partidas",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/partidas",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"partidas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/partidas/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/partidas/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"partidas",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/partidas",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"campeonato\": 1,\r\n    \"usuarios\": [\r\n        {\"id\": 7},\r\n        {\"id\": 8},\r\n        {\"id\": 9}\r\n    ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/partidas",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"partidas"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/partidas/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/partidas/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"partidas",
+												"3"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/partidas/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/partidas/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"partidas",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "v4",
+					"item": [
+						{
+							"name": "users",
+							"item": [
+								{
+									"name": "/api/users",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/users",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/user/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/user/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/user",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Alemao\",\r\n    \"email\": \"qaqa@qa.com\",\r\n    \"password\": 123\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/user",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/user/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/user/8",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"8"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/user/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/user/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"user",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "tournament",
+							"item": [
+								{
+									"name": "/api/tournaments",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/tournaments",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"tournaments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/tournament/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/tournament/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"tournament",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/tournament",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"1º Copa UPF de Truco\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/tournament",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"tournament"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/tournament/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"nome\": \"Fred Vorhees\",\r\n    \"email\": \"asdasdasdsadasd@qa.com\",\r\n    \"password\": \"123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/tournament/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"tournament",
+												"3"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/tournament/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/tournament/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"tournament",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "match",
+							"item": [
+								{
+									"name": "/api/matches",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/matches",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"matches"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/match/{id}",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/match/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"match",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/match",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"tournament\": 2,\r\n    \"users\": [4, 5]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/match",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"match"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/match/{id}",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"matchId\": 1,\r\n    \"userId\": 4\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:3001/api/match/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"match",
+												"3"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "/api/match/{id}",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:3001/api/match/3",
+											"host": [
+												"localhost"
+											],
+											"port": "3001",
+											"path": [
+												"api",
+												"match",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3001",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
