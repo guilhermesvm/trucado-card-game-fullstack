@@ -1,21 +1,18 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import Link from "next/link";
+import NavbarTop from './components/NavbarTop';
+import { Container } from 'react-bootstrap';
+import NavbarBottom from './components/NavbarBottom';
 
 export default function App({ Component, pageProps }: AppProps) {
   return(
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/users">Users</Link>
-          </li>
-          <li>
-            <Link href="/matches">Matches</Link>
-          </li>
-        </ul>
-      </nav>
-      <Component {...pageProps} />;
+      <NavbarTop></NavbarTop>
+      <Container className="d-flex justify-content-center align-items-center" style={{height: "90vh"}}>
+        <Component {...pageProps} />
+      </Container>
+      <NavbarBottom></NavbarBottom>
     </div>
   )
 };

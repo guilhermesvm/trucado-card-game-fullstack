@@ -1,11 +1,11 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 
-export default function Home() {
-  return (
-    <div>
-      <h1> Hello World, alemao eh guay</h1>
-      <p>Teste</p>
-    </div>
-  );
+export default function Index() {
+    return (
+      <div>
+        <h1> Hello World</h1>
+        <p></p>
+      </div>
+    );
 }
