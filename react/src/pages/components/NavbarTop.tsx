@@ -18,6 +18,9 @@ export default function NavbarTop(){
                     <Nav>
                         <Nav.Link as={Link} href="/scoreboard" passHref>Placar</Nav.Link>
                     </Nav>
+                    <Nav>
+                        <Nav.Link as={Link} href="/dogs" passHref>Cachorros</Nav.Link>
+                    </Nav>
                 </Container>
             </Navbar>
         </>
