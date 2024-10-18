@@ -49,3 +49,4 @@ NPM Parameters:
 FrontEnd
 - Next.js : `npm install -g nextjs`
 - React/Next files: `npx create-next-app@latest`
+- Axios: `npm install axios`
