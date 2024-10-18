@@ -30,12 +30,13 @@ class TeamRepository implements TeamRepository {
     }
 
     async update(id: number, team: Partial<Omit<TeamEntity, 'id'>>): Promise<TeamEntity | undefined> {
-        const tournamenToUpdate = await this.getById(id)
+        const teamToUpdate = await this.getById(id)
 
-        if (!tournamenToUpdate) {
+        if (!teamToUpdate) {
             return undefined
         }
-        return this.repository.merge(tournamenToUpdate, team)
+        const updatedTeam = this.repository.merge(teamToUpdate, team)
+        return await this.repository.save(updatedTeam)
     }
 
     async delete(id: number): Promise<boolean> {

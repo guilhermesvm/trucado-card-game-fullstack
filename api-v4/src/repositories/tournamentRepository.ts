@@ -28,7 +28,8 @@ class TournamentRepository implements TournamentRepository {
         if (!tournamenToUpdate) {
             return undefined
         }
-        return this.repository.merge(tournamenToUpdate, tournament)
+        const updatedTournament = this.repository.merge(tournamenToUpdate, tournament);
+        return await this.repository.save(updatedTournament)
     }
 
     async delete(id: number): Promise<boolean> {

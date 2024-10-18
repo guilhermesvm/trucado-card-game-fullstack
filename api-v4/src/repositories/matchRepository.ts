@@ -27,7 +27,8 @@ class MatchRepository implements MatchRepository {
         if (!matchToUpdate) {
             return undefined
         }
-        return this.repository.merge(matchToUpdate, match)
+        const updatedMatch = this.repository.merge(matchToUpdate, match);
+        return await this.repository.save(updatedMatch);
     }
 
     async delete(id: number): Promise<boolean> {

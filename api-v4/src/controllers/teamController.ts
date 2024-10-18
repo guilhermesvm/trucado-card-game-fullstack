@@ -10,30 +10,31 @@ export class TeamController {
   }
 
   getAll = async (req: Request, res: Response): Promise<void> => {
-      const users = await this.teamRepository.getAll();
-      res.status(200).json(users);
+      const team = await this.teamRepository.getAll();
+      res.status(200).json(team);
   };
 
   getById = async (req: Request, res: Response): Promise<void> => {
-      const user = await this.teamRepository.getById(parseInt(req.params.id));
-      if (!user) {
-          res.status(404).send('Team not found');
-      } else {
-          res.status(200).json(user);
-      }
+    const teamId = parseInt(req.params.id);
+    const team = await this.teamRepository.getById(teamId);
+    if (!team) {
+        res.status(404).send('Team not found');
+    } else {
+        res.status(200).json(team);
+    }
   };
 
   create = async (req: Request, res: Response): Promise<void> => {
-      const newUser = await this.teamRepository.create(req.body);
+      const newTeam = await this.teamRepository.create(req.body);
       res.status(201).json({message: "Team added"});
   };
 
   update = async (req: Request, res: Response): Promise<void> => {
-      const updatedUser = await this.teamRepository.update(parseInt(req.params.id), req.body);
-      if (!updatedUser) {
+      const updatedTeam = await this.teamRepository.update(parseInt(req.params.id), req.body);
+      if (!updatedTeam) {
           res.status(404).send('Team not found');
       } else {
-          res.status(200).json(updatedUser);
+          res.status(200).json(updatedTeam);
       }
   };
 

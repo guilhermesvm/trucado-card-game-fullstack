@@ -15,34 +15,42 @@ export class UserController {
   };
 
   getById = async (req: Request, res: Response): Promise<void> => {
-      const user = await this.userRepository.getById(parseInt(req.params.id));
-      if (!user) {
-          res.status(404).send('User not found');
-      } else {
-          res.status(200).json(user);
-      }
+    const userId = parseInt(req.params.id);
+    const user = await this.userRepository.getById(userId);
+    if (!user) {
+        res.status(404).send('User not found');
+        return
+    } 
+    res.status(200).json(user);
   };
 
   create = async (req: Request, res: Response): Promise<void> => {
       const newUser = await this.userRepository.create(req.body);
-      res.status(201).json({message: "User added"});
+      res.status(201).json({message: "User added", user: newUser});
   };
 
   update = async (req: Request, res: Response): Promise<void> => {
-      const updatedUser = await this.userRepository.update(parseInt(req.params.id), req.body);
-      if (!updatedUser) {
-          res.status(404).send('User not found');
-      } else {
-          res.status(200).json(updatedUser);
-      }
+    const userId = parseInt(req.params.id);
+
+    const updatedUser = await this.userRepository.update(userId, req.body);
+    if (!updatedUser) {
+        res.status(404).send('User not found');
+        return;
+    }
+    res.status(200).json(updatedUser);
+    
   };
 
   delete = async (req: Request, res: Response): Promise<void> => {
-      const success = await this.userRepository.delete(parseInt(req.params.id));
-      if (!success) {
-          res.status(404).send('User not found');
-      } else {
-          res.status(204).send();
-      }
+    const userId = parseInt(req.params.id);
+
+    const success = await this.userRepository.delete(userId);
+    if (!success) {
+        res.status(404).send('User not found');
+        return;
+    } 
+
+    res.status(204).send();
+    
   };
 }

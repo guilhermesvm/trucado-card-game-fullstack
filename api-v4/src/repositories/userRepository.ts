@@ -1,7 +1,7 @@
 import { DataSource, In, Repository } from 'typeorm'
 import UserEntity from '../entities/user'
 
-class UserRepository implements UserRepository {
+class UserRepository {
     private repository: Repository<UserEntity>
 
     constructor(dataSource: DataSource) {
@@ -16,6 +16,11 @@ class UserRepository implements UserRepository {
         const user = await this.repository.findOneBy({ id })
         return user || undefined
     }
+
+    async getByLogin(email: string, password: number): Promise<UserEntity | undefined> {
+        const data = await this.repository.findOneBy({ email, password })
+        return data || undefined;
+    }
     
     
     async getBy(ids: number[]): Promise<UserEntity[] | undefined> {
@@ -24,6 +29,7 @@ class UserRepository implements UserRepository {
         })
         return users || undefined;
     }
+    
     /* Se a lista for um array de objetos [{id: 1}, {id: 2}]
     async getBy(ids: { id: number }[]): Promise<UserEntity[] | undefined> {
         const users = await this.repository.findBy({
@@ -43,7 +49,8 @@ class UserRepository implements UserRepository {
         if (!userToUpdate) {
             return undefined
         }
-        return this.repository.merge(userToUpdate, user);
+        const updatedPlayer = this.repository.merge(userToUpdate, user);
+        return await this.repository.save(updatedPlayer)   
     }
 
     async delete(id: number): Promise<boolean> {

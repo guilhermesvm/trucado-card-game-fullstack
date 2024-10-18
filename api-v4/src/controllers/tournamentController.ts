@@ -10,39 +10,46 @@ export class TournamentController {
   }
 
   getAll = async (req: Request, res: Response): Promise<void> => {
-      const users = await this.tournamentRepository.getAll();
-      res.status(200).json(users);
+      const tournaments = await this.tournamentRepository.getAll();
+      res.status(200).json(tournaments);
   };
 
   getById = async (req: Request, res: Response): Promise<void> => {
-      const user = await this.tournamentRepository.getById(parseInt(req.params.id));
-      if (!user) {
-          res.status(404).send('Tournament not found');
-      } else {
-          res.status(200).json(user);
-      }
+    const tournamentId = parseInt(req.params.id);
+    const tournament = await this.tournamentRepository.getById(tournamentId);
+    if (!tournament) {
+        res.status(404).json({message:'Tournament not found'});
+        return;
+    }
+    res.status(200).json(tournament);
+      
   };
 
   create = async (req: Request, res: Response): Promise<void> => {
-      const newUser = await this.tournamentRepository.create(req.body);
-      res.status(201).json({message: "Tournament added"});
+      const newTournament = await this.tournamentRepository.create(req.body);
+      res.status(201).json({message: "Tournament added", tournament: newTournament});
   };
 
   update = async (req: Request, res: Response): Promise<void> => {
-      const updatedUser = await this.tournamentRepository.update(parseInt(req.params.id), req.body);
-      if (!updatedUser) {
-          res.status(404).send('Tournament not found');
-      } else {
-          res.status(200).json(updatedUser);
-      }
+    const tournamentId = parseInt(req.params.id);
+
+    const updatedTournament = await this.tournamentRepository.update(tournamentId, req.body);
+    if (!updatedTournament) {
+        res.status(404).send('Tournament not found');
+        return;
+    } 
+    res.status(200).json(updatedTournament);
+      
   };
 
   delete = async (req: Request, res: Response): Promise<void> => {
-      const success = await this.tournamentRepository.delete(parseInt(req.params.id));
-      if (!success) {
-          res.status(404).send('Tournament not found');
-      } else {
-          res.status(204).send();
-      }
+    const tournamentId = parseInt(req.params.id);
+    const success = await this.tournamentRepository.delete(tournamentId);
+    if (!success) {
+        res.status(404).send('Tournament not found');
+        return;
+    } 
+    res.status(204).send();
+    
   };
 }
