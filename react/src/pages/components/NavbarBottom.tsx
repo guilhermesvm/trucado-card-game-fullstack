@@ -7,7 +7,7 @@ export default function NavbarBottom(){
             <Navbar bg="dark" data-bs-theme="dark" fixed="bottom" sticky="bottom">
                 <Container>
                     <Nav>
-                        <Nav.Link as={Link} href="#" passHref>Top</Nav.Link>
+                        <Nav.Link as={Link} href="/health" passHref>HealthCheck</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
