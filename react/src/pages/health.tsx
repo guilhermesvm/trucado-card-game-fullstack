@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function HealthCheck() {
-    const url = "http://localhost:3001/api/healthcheck";
     const [status, setStatus] = useState("Off");
 
+    const url = "http://localhost:3001/api/healthcheck";
     useEffect(() => {
         axios.get(url)
             .then(function (response) {

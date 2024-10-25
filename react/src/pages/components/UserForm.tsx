@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import userService from "../services/userService";
 
 interface User {
     name: string,
@@ -20,19 +21,11 @@ const UserForm: React.FC = () => {
         setFormData({...formData, [name]: value});
     }
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
-        const url = "http://localhost:3001/api/user"
-        axios.post(url, formData).then( function(response) {
-            if(response.status == 201) {
-                console.log("User added");
-            }
-        }).catch(
-            function(error){
-                console.log(error);
-            }
-        )
+        await userService.createUser(formData);
+
         console.log(formData);
     }
 

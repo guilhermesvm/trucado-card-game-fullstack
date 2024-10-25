@@ -11,12 +11,12 @@ const Dogs = () => {
 
     const searchAxios = () => {
         const url = "https://dog.ceo/api/breeds/image/random"
-        axios.get(url)
-        .then(function (response) {
+        axios.get(url).then(function(response) {
             setDogImg(response.data.message);
             setLoading(false);
             console.log(response);
-        }).catch(function (error) {
+        })
+        .catch(function (error) {
             console.log(error);
         })
     }

@@ -17,9 +17,9 @@ class UserRepository {
         return user || undefined
     }
 
-    async getByLogin(email: string, password: number): Promise<UserEntity | undefined> {
-        const data = await this.repository.findOneBy({ email, password })
-        return data || undefined;
+    async getByLogin(email: string): Promise<UserEntity | undefined> {
+        const user = await this.repository.findOneBy({ email: email })
+        return user || undefined;
     }
     
     
