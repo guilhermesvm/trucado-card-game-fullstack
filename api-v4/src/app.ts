@@ -4,7 +4,7 @@ import userRouter from "./routes/userRoute";
 import tournamentRouter from "./routes/tournamentRoutes";
 import matchRouter from "./routes/matchRoute";
 import healthRouter from "./routes/healthRoute";
-import authController from "./routes/authRoute";
+import authRouter from "./routes/authRoute";
 import errorHandler from "./middleware/errorHandler";
 
 const app: Application = express();
@@ -15,7 +15,7 @@ app.use("/api", userRouter);
 app.use("/api", tournamentRouter);
 app.use("/api", matchRouter);
 app.use("/api", healthRouter);
-app.use("/api", authController)
+app.use("/api", authRouter)
 
 app.use(errorHandler);
 

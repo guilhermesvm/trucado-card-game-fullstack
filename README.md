@@ -43,6 +43,7 @@ NPM Dev Parameters:
 - Nodemon: `npm install -D nodemon`
 - @types/express: `npm install -D @types/express`
 - @types/cors: `npm install -D @types/cors`
+- @types/bcryptjs: `npm install @types/bcryptjs --save-dev`
 
 NPM Parameters:
 
@@ -53,6 +54,7 @@ NPM Parameters:
 - At tsconfig.json, add: `"esModuleInterop": true`
 - JWT: `npm install jsonwebtoken`
 - @types/jsonwebtoken: `npm install @types/jsonwebtoken`
+- BcryptJS (password hashing): `npm install bcryptjs`
 
 FrontEnd
 

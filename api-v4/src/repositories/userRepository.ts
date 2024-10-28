@@ -17,7 +17,7 @@ class UserRepository {
         return user || undefined
     }
 
-    async getByLogin(email: string): Promise<UserEntity | undefined> {
+    async getByEmail(email: string): Promise<UserEntity | undefined> {
         const user = await this.repository.findOneBy({ email: email })
         return user || undefined;
     }
@@ -50,7 +50,7 @@ class UserRepository {
             return undefined
         }
         const updatedPlayer = this.repository.merge(userToUpdate, user);
-        return await this.repository.save(updatedPlayer)   
+        return await this.repository.save(updatedPlayer);
     }
 
     async delete(id: number): Promise<boolean> {

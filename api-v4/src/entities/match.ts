@@ -15,11 +15,11 @@ export class Match {
     @JoinTable()
     tournament?: Tournament;
 
-    @ManyToMany(() => User, { nullable: true })
+    @ManyToMany(() => User, { nullable: true, lazy: false })
     @JoinTable()
     users?: User[]
 
-    @ManyToMany(() => Team, { nullable: true })
+    @ManyToMany(() => Team, { nullable: true, lazy: false })
     @JoinTable()
     teams?: Team[]
 

@@ -14,7 +14,7 @@ export class User {
   email?: string
 
   @Column()
-  password?: number
+  password?: string
 
   @ManyToMany(() => Match, matches => matches.users, { lazy: true })
   matches?: Match[]
@@ -26,7 +26,7 @@ export class User {
     id?: number,
     name?: string,
     email?: string,
-    password?: number,
+    password?: string,
     matches?: Match[],
     teams?: Team[]
   ) {

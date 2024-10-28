@@ -5,7 +5,7 @@ class MatchRepository implements MatchRepository {
     private repository: Repository<MatchEntity>
 
     constructor(dataSource: DataSource) {
-        this.repository = dataSource.getRepository(MatchEntity)
+        this.repository = dataSource.getRepository(MatchEntity);
     }
 
     async getAll(): Promise<MatchEntity[]> {
@@ -13,7 +13,10 @@ class MatchRepository implements MatchRepository {
     }
 
     async getById(id: number): Promise<MatchEntity | undefined> {
-        const match = await this.repository.findOneBy({ id })
+        const match = await this.repository.findOne({ 
+            where: {id},
+            relations: ['users', 'teams', 'winnerUser', 'winnerTeam', 'tournament'] 
+        });
         return match || undefined
     }
 

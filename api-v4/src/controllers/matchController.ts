@@ -20,50 +20,62 @@ export class MatchController {
     };
 
     getById = async (req: Request, res: Response): Promise<void> => {
-        const matches = await this.matchRepository.getById(parseInt(req.params.id));
-        if (!matches) {
-            res.status(404).send('Match not found');
-        } else {
-            res.status(200).json(matches);
-        }
+        const matchId = parseInt(req.params.id);
+
+        const match = await this.matchRepository.getById(matchId);
+        if (!match) {
+            res.status(404).json({message: "Match not found" });
+            return;
+        } 
+
+        res.status(200).json(match);
+        
     };
 
-     create = async (req: Request, res: Response) => {
+     create = async (req: Request, res: Response): Promise<void> => {
         const tournamentRepository: TournamentRepository = new TournamentRepository(appDataSource)        
         const userRepository: UserRepository = new UserRepository(appDataSource)
-        // const teamRepository: TeamRepository = new TeamRepository(appDataSource)
+        const teamRepository: TeamRepository = new TeamRepository(appDataSource)
 
         const tournamentId = req.body.tournament
         const usersIds = req.body.users
-        // const teamsIds = req.body.teams
+        const teamsIds = req.body.teams
         const date = req.body.date
                  
         const tournament = await tournamentRepository.getById(tournamentId)
         if(!tournament) {
-            res.status(404).json({message: "Tournament not found!"})
+            res.status(404).json({message: "Tournament not found!"});
+            return;
         }
 
         const users = await userRepository.getBy(usersIds);
         if(users && users.length !== 2) {
-            res.status(404).json({message: "Incorret User count"})
+            res.status(404).json({message: "Incorret user count."});
+            return;
         }
 
-        // const teams = await teamRepository.getBy(teamsIds);
-        // if(teams && teams.length !== 2) {
-        //     res.status(404).json({message: "Incorret Team count"})
-        // }
+        if(teamsIds){
+            const teams = await teamRepository.getBy(teamsIds);
+        if(teams && teams.length !== 2) {
+            res.status(404).json({message: "Incorret team count."});
+            return;
+        }
 
-        const match = new Match()
-        //match.date = date
-        match.users = users
-        // match.teams = teamsIds
-        match.tournament = tournament
+        }
 
-        const newMatch = this.matchRepository.create(match)
-        res.status(201).json(newMatch);
+        
+
+        const match = new Match();
+        match.date = date;
+        match.users = users;
+        match.teams = teamsIds;
+        match.tournament = tournament;
+
+        const newMatch = this.matchRepository.create(match);
+        res.status(201).json({message: "Match added.", match: newMatch});
     }
 
-    update = async (req: Request, res: Response) => {
+    update = async (req: Request, res: Response): Promise<void> => {
         const {matchId, userId} = req.body;
         const matchRepository: MatchRepository = new MatchRepository(appDataSource);
         const userRepository: UserRepository = new UserRepository(appDataSource);
@@ -71,18 +83,31 @@ export class MatchController {
         const match = await matchRepository.getById(matchId);
         if(!match){
             res.status(404).json({message: "Match not found."});
+            return;
         }
 
         const winnerUser = await userRepository.getById(userId);
         if(!winnerUser){
             res.status(404).json({message: "User not found."});
+            return;
         }
 
         match!.winnerUser = winnerUser;
         const result = await matchRepository.save(match!)
         if(result)
-            res.status(200).json({message: "Match successfully updated."});
+            res.status(200).json({message: "Match was successfully updated.",});
         else
             throw error;
+    }
+
+    delete = async(req: Request, res: Response): Promise<void> => {
+        const matchId = parseInt(req.params.id);
+        const success = await this.matchRepository.delete(matchId);
+
+        if(!success){
+            res.status(404).json({message: "Match not found."});
+            return;
+        }
+        res.status(204).json({message: "Match was successfully deleted | Nothing was deleted."});
     }
 }

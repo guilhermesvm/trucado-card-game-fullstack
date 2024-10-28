@@ -5,16 +5,16 @@ class TeamRepository implements TeamRepository {
     private repository: Repository<TeamEntity>
 
     constructor(dataSource: DataSource) {
-        this.repository = dataSource.getRepository(TeamEntity)
+        this.repository = dataSource.getRepository(TeamEntity);
     }
 
     async getAll(): Promise<TeamEntity[]> {
-        return this.repository.find()
+        return this.repository.find();
     }
 
     async getById(id: number): Promise<TeamEntity | undefined> {
-        const teams = await this.repository.findOneBy({ id })
-        return teams || undefined
+        const teams = await this.repository.findOneBy({ id });
+        return teams || undefined;
     }
 
     async getBy(ids: number[]): Promise<TeamEntity[] | undefined> {
@@ -25,23 +25,23 @@ class TeamRepository implements TeamRepository {
     }
 
     async create(team: Omit<TeamEntity, 'id'>): Promise<TeamEntity> {
-        const newTeam = this.repository.create(team)
-        return this.repository.save(newTeam)
+        const newTeam = this.repository.create(team);
+        return this.repository.save(newTeam);
     }
 
     async update(id: number, team: Partial<Omit<TeamEntity, 'id'>>): Promise<TeamEntity | undefined> {
-        const teamToUpdate = await this.getById(id)
+        const teamToUpdate = await this.getById(id);
 
         if (!teamToUpdate) {
-            return undefined
+            return undefined;
         }
-        const updatedTeam = this.repository.merge(teamToUpdate, team)
-        return await this.repository.save(updatedTeam)
+        const updatedTeam = this.repository.merge(teamToUpdate, team);
+        return await this.repository.save(updatedTeam);
     }
 
     async delete(id: number): Promise<boolean> {
-        const result = await this.repository.delete(id)
-        return result?.affected ? result.affected > 0 : false
+        const result = await this.repository.delete(id);
+        return result?.affected ? result.affected > 0 : false;
     }
 }
 
