@@ -56,11 +56,10 @@ export class MatchController {
 
         if(teamsIds){
             const teams = await teamRepository.getBy(teamsIds);
-        if(teams && teams.length !== 2) {
-            res.status(404).json({message: "Incorret team count."});
-            return;
-        }
-
+            if(teams && teams.length !== 2) {
+                res.status(404).json({message: "Incorret team count."});
+                return;
+            }
         }
 
         

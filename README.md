@@ -55,9 +55,18 @@ NPM Parameters:
 - JWT: `npm install jsonwebtoken`
 - @types/jsonwebtoken: `npm install @types/jsonwebtoken`
 - BcryptJS (password hashing): `npm install bcryptjs`
+- Faker: `npm install @faker-js/faker`
 
 FrontEnd
 
 - Next.js : `npm install -g nextjs`
 - React/Next files: `npx create-next-app@latest`
 - Axios: `npm install axios`
+
+Mobile
+
+- AVD (Android Studio / SDK 34)
+- Habilitar mod dev e conectar o cel
+- npm install -g expo-cli
+- npx create-expo-app --template blank nome
+- npx expo start

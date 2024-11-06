@@ -35,6 +35,7 @@ export class UserController {
   create = async (req: Request, res: Response): Promise<void> => {
     try {
       let {name, email, password} = req.body;
+      
       if(!name || !email || !password){
         res.status(400).json({message: "All user data is required."});
         return;
