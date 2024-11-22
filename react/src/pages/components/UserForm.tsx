@@ -6,14 +6,14 @@ import userService from "../services/userService";
 interface User {
     name: string,
     email: string,
-    password: number
+    password: string
 }
 
 const UserForm: React.FC = () => { 
     const [formData, setFormData] = useState<User>({
         name: "",
         email: "",
-        password: 0
+        password: ""
     })
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

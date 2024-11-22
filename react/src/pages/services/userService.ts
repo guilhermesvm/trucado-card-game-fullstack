@@ -1,6 +1,7 @@
 import axios from "axios";
 
 class UserService {
+    
 
     // async getUsers() {
     //     const url = "http://localhost:3001/api/users";
@@ -17,7 +18,7 @@ class UserService {
     
     async getUsers() {
         const url = "http://localhost:3001/api/users";
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJlbWFpbCI6Imd1aWxoZXJtZW1hY2hhZG9AcWEuY29tIiwiaWF0IjoxNzI5ODY2OTgyLCJleHAiOjE3Mjk4NzA1ODJ9.bY6i6TuR1C-UKRt6TnyaDSKVNrQaVqb-9vokSOPxHNY"
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJlbWFpbCI6ImFkbWluQHFhLmNvbSIsImlhdCI6MTczMDk5NDQ4NywiZXhwIjoxNzMxMDgwODg3fQ.gEk-4DhBWnID1HH8iO6bSWWrh_rTf3A8tuO8koxHDFE"
         try {
             const response = await axios.get(url, {headers: {'Authorization': "Bearer " + token}});
             return response.data; 
