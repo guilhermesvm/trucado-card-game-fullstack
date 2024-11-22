@@ -6,7 +6,7 @@ class UserService {
     async getUsers() {
         return await axios.get(`${baseUrl}/users`, {
             headers: {
-                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RlIiwiaWF0IjoxNzI5NTQwMzQ2LCJleHAiOjE3Mjk1NDM5NDZ9.DxKFCctdtfvuc3KgNnyOi1elTeeh391B4zO_RBeG-Sc'
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJlbWFpbCI6ImFkbWluQHFhLmNvbSIsImlhdCI6MTczMDk5NDQ4NywiZXhwIjoxNzMxMDgwODg3fQ.gEk-4DhBWnID1HH8iO6bSWWrh_rTf3A8tuO8koxHDFE'
             }
         })        
         .then((response) => response.data)
