@@ -61,9 +61,7 @@ export class MatchController {
                 return;
             }
         }
-
         
-
         const match = new Match();
         match.date = date;
         match.users = users;
