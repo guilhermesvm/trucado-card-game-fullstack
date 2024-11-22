@@ -59,9 +59,12 @@ NPM Parameters:
 
 FrontEnd
 
-- Next.js : `npm install -g nextjs`
 - React/Next files: `npx create-next-app@latest`
+- Next.js : `npm install -g nextjs`
+- React Bootstrap: `npm install react-bootstrap`
+- Boostrap: `npm install bootstrap`
 - Axios: `npm install axios`
+- Router: `npm install react-router-dom`
 
 Mobile
 
